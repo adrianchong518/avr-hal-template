@@ -3,12 +3,6 @@ name = "{{project-name}}"
 version = "0.1.0"
 authors = ["{{authors}}"]
 edition = "2018"
-license = "MIT OR Apache-2.0"
-
-[[bin]]
-name = "{{project-name}}"
-test = false
-bench = false
 
 [dependencies]
 panic-halt = "0.2.0"
@@ -18,7 +12,6 @@ embedded-hal = "0.2.3"
 
 [dependencies.arduino-hal]
 git = "https://github.com/rahix/avr-hal"
-rev = "ac72adbe6db8900c41681b759ff62a11f2915916"
 {% case board -%}
   {%- when "Arduino Leonardo" -%}
     features = ["arduino-leonardo"]
@@ -34,7 +27,6 @@ rev = "ac72adbe6db8900c41681b759ff62a11f2915916"
     features = ["nano168"]
 {%- endcase %}
 
-# Configure the build for minimal size - AVRs have very little program memory
 [profile.dev]
 panic = "abort"
 lto = true
@@ -46,6 +38,3 @@ codegen-units = 1
 debug = true
 lto = true
 opt-level = "s"
-{%- comment %}
-# vim: ft=toml.jinja2
-{% endcomment %}

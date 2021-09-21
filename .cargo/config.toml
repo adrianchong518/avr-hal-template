@@ -19,19 +19,16 @@
   {%- when "Arduino Leonardo" -%}
     runner = "ravedude leonardo"
   {%- when "Arduino Mega 2560" -%}
-    runner = "ravedude mega2560 -cb 57600"
+    runner = "ravedude mega2560 -cb {{baudrate}}"
   {%- when "Arduino Nano" -%}
-    runner = "ravedude nano -cb 57600"
+    runner = "ravedude nano -cb {{baudrate}}"
   {%- when "Arduino Uno" -%}
-    runner = "ravedude uno -cb 57600"
+    runner = "ravedude uno -cb {{baudrate}}"
   {%- when "SparkFun ProMicro" -%}
     runner = "ravedude promicro"
   {%- when "Nano168" -%}
-    runner = "ravedude nano168 -cb 57600"
+    runner = "ravedude nano168 -cb {{baudrate}}"
 {%- endcase %}
 
 [unstable]
 build-std = ["core"]
-{%- comment %}
-# vim: ft=toml.jinja2
-{% endcomment %}

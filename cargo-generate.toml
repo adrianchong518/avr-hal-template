@@ -1,3 +1,6 @@
+[template]
+ignore = [ "README.md" ]
+
 [placeholders.board]
 type = "string"
 prompt = "Which board do you use?"
@@ -10,3 +13,9 @@ choices = [
   "Nano168",
 ]
 default = "Arduino Uno"
+
+[placeholders.baudrate]
+type = "string"
+prompt = "What is your serial monitor baudrate?"
+regex = "[0-9]+"
+default = "115200"
