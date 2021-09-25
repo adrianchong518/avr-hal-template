@@ -11,6 +11,7 @@ ufmt_float = "0.1.0"
 nb = "1.0.0"
 embedded-hal = "0.2.3"
 micromath = "2.0.0"
+avr-device = "0.3.1"
 
 [dependencies.arduino-hal]
 git = "https://github.com/rahix/avr-hal"
